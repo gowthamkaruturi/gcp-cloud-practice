@@ -31,6 +31,7 @@ resource "google_compute_instance" "terraform-on-gcp" {
       image = "debian-cloud/debian-10"
     }
   }
+  metadata_startup_script = file("./install.sh")
   network_interface {
     network = google_compute_network.terraform_network.self_link
     subnetwork = google_compute_subnetwork.terraform_subnet.self_link
