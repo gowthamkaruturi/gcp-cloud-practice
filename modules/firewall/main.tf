@@ -17,6 +17,7 @@ resource "google_compute_firewall" "http-rule" {
     ports    = ["80"]
   }
   target_tags   = var.http_target_tags
+  source_ranges = var.http_source_ranges
 }
 
 output "ssh_firewall_name" {

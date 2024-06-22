@@ -12,8 +12,8 @@ resource "google_compute_instance_template" "terraform_on_gcp_instance_template"
     subnetwork = var.subnetwork_name
     access_config {}
   }
-  metadata_startup_script = var.startup_script
- tags                    =  ["ssh-access", "http-server"]
+  metadata_startup_script = file(var.startup_script)
+  tags                    =  ["ssh-access", "http-server"]
 }
 
 resource "google_compute_autoscaler" "terraform_on_gcp_autosacaler" {
