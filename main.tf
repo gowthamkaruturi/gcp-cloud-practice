@@ -27,10 +27,13 @@ module "instance" {
   // Variables to be defined based on your requirements
 }
 
+module "loadbalancer"{
+  source = "./modules/loadbalancer"
+}
 output "instance_template_name" {
   value = module.instance.instance_template_name
 }
 
 output "instance_group_name" {
-  value = module.instance.instance_group_name
+  value = module.instance.instance_group_manager_name
 }

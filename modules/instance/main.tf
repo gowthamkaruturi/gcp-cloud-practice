@@ -80,8 +80,14 @@ output "instance_template_name" {
   value = google_compute_instance_template.terraform_on_gcp_instance_template.name
 }
 
-output "instance_group_name" {
+
+output "instance_group_manager_name" {
   value = google_compute_instance_group_manager.terraform_on_gcp_instance_group.name
 }
+output "health_check_self_link" {
+  value = google_compute_health_check.terraform_on_gcp_health_check.self_link
+}
 
-
+output "instance_group_manager_selflink" {
+  value = google_compute_instance_group_manager.terraform_on_gcp_instance_group.self_link
+}
